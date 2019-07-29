@@ -7,7 +7,7 @@
 using namespace std;
 
 struct Sales_data;
-istream& read(istream&, Sales_data&);    //ÉùÃ÷·Ç³£ÖØÒª²»È»»á³ö´í
+istream& read(istream&, Sales_data&);    //å£°æ˜éå¸¸é‡è¦ä¸ç„¶ä¼šå‡ºé”™
 
 
 struct Sales_data {
@@ -16,23 +16,23 @@ struct Sales_data {
 	Sales_data(const string& s, unsigned n, double p) :bookNo(s), 
 		units_sold(n), revenue(n * p) {}
 	Sales_data(istream& is) {
-		read(is, *this);                                   //µ÷ÓÃreadº¯ÊıµÄÊ±ºòread»¹Ã»±»¶¨Òå£¬
-																//	ËùÒÔÒªÏÈ½øĞĞÉùÃ÷²»È»»á³ö´í
-																//ÓÖÒòÎªreadÓÃÁËSales_dataÀàĞÍËùÒÔÒªÏÈÉùÃ÷Sales_data
+		read(is, *this);                                //è°ƒç”¨readå‡½æ•°çš„æ—¶å€™readè¿˜æ²¡è¢«å®šä¹‰ï¼Œ
+								//	æ‰€ä»¥è¦å…ˆè¿›è¡Œå£°æ˜ä¸ç„¶ä¼šå‡ºé”™
+								//åˆå› ä¸ºreadç”¨äº†Sales_dataç±»å‹æ‰€ä»¥è¦å…ˆå£°æ˜Sales_data
 	}
 
-	//³ÉÔ±±äÁ¿
+	//æˆå‘˜å˜é‡
 	string bookNo;
 	unsigned units_sold = 0;
 	double revenue = 0.0;
 
-	string isbn() const {    //constÒâÎª²»¸Ä±äthisÖĞµÄÄÚÈİ
+	string isbn() const {    //constæ„ä¸ºä¸æ”¹å˜thisä¸­çš„å†…å®¹
 		return this->bookNo;
 	}
-	Sales_data& combine(const Sales_data&); //ÉùÃ÷º¯Êı
+	Sales_data& combine(const Sales_data&); //å£°æ˜å‡½æ•°
 };
 
-Sales_data& Sales_data::combine(const Sales_data& rhs) {  //ÖØĞ´º¯Êı
+Sales_data& Sales_data::combine(const Sales_data& rhs) {  //é‡å†™å‡½æ•°
 	units_sold += rhs.units_sold;
 	revenue += rhs.revenue;
 	return *this;
