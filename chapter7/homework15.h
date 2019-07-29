@@ -13,7 +13,7 @@ istream& read(istream&, Person);
 
 struct Person {
 	Person() = default;
-	Person(const string& s1, const string& s2) : name(s1), adress(s2){} //¹¹Ôìº¯Êý
+	Person(const string& s1, const string& s2) : name(s1), adress(s2){} //Â¹Â¹Ã”Ã¬ÂºÂ¯ÃŠÃ½
 	Person(istream& is) {
 		read(is, *this);
 	}
