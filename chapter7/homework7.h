@@ -14,9 +14,6 @@ struct Sales_data {
 		return this->bookNo;
 	}
 	Sales_data& combine(const Sales_data&); //声明函数
-	istream& read(istream& is, Sales_data& item);
-	ostream& print(ostream& os, Sales_data& item);
-	Sales_data add(const Sales_data& lhs, const Sales_data& rhs);
 };
 
 Sales_data& Sales_data::combine(const Sales_data& rhs) {  //重写函数
@@ -25,7 +22,7 @@ Sales_data& Sales_data::combine(const Sales_data& rhs) {  //重写函数
 	return *this;
 }
 
-istream& Sales_data::read(istream& is, Sales_data& item) {
+istream& read(istream& is, Sales_data& item) {
 	double price = 0.0;
 	is >> item.bookNo >> item.units_sold >> price;
 	item.revenue = item.units_sold * price;
@@ -33,13 +30,13 @@ istream& Sales_data::read(istream& is, Sales_data& item) {
 }
 
 
-ostream& Sales_data :: print(ostream& os, Sales_data& item) {
+ostream& print(ostream& os, Sales_data& item) {
 	cout << item.bookNo << " " << item.units_sold << " "
 		<< item.revenue;
 	return os;
 }
 
-Sales_data Sales_data::add(const Sales_data& lhs, const Sales_data& rhs) {
+Sales_data add(const Sales_data& lhs, const Sales_data& rhs) {
 	Sales_data temp = lhs;
 	temp.combine(rhs);
 	return temp;
