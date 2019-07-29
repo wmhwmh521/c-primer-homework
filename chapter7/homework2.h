@@ -10,13 +10,13 @@ struct Sales_data {
 	unsigned units_sold = 0;
 	double revenue = 0.0;
 
-	string isbn() const {    //const意为不改变this中的内容
+	string isbn() const {    //const鎰忎负涓嶆敼鍙榯his涓殑鍐呭
 		return this->bookNo;
 	}
-	Sales_data& combine(const Sales_data&); //声明函数
+	Sales_data& combine(const Sales_data&); //澹版槑鍑芥暟
 };
 
-Sales_data& Sales_data::combine(const Sales_data& rhs) {  //重写函数
+Sales_data& Sales_data::combine(const Sales_data& rhs) {  //閲嶅啓鍑芥暟
 	units_sold += rhs.units_sold;
 	revenue += rhs.revenue;
 	return *this;
