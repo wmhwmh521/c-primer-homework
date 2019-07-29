@@ -12,14 +12,14 @@ istream& read(istream&, Person);
 
 
 struct Person {
-	//ÓÑÔª
+	//å‹å…ƒ
 	friend istream& read(istream& is, Person person);
 	friend ostream& print(ostream& os, Person person);
 
 	
-	//¹¹Ôìº¯Êı
+	//æ„é€ å‡½æ•°
 	Person() = default;
-	Person(const string& s1, const string& s2) : name(s1), adress(s2){} //¹¹Ôìº¯Êı
+	Person(const string& s1, const string& s2) : name(s1), adress(s2){} //æ„é€ å‡½æ•°
 	Person(istream& is) {
 		read(is, *this);
 	}
@@ -38,7 +38,7 @@ struct Person {
 	}
 
 };
-//º¯ÊıÉùÃ÷
+//å‡½æ•°å£°æ˜
 istream& read(istream& is, Person person);
 ostream& print(ostream& os, Person person);
 
