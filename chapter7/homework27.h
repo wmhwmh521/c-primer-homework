@@ -22,7 +22,7 @@ public:
 	char get() const {
 		return contents[cursor];
 	}
-	inline char get(pos ht, pos wd) const;  //重载get
+	inline char get(pos ht, pos wd) const;  //脰脴脭脴get
 	Screen& move(pos r, pos c);
 	Screen& set(char);
 	Screen& set(pos, pos, char);
@@ -47,7 +47,7 @@ inline Screen& Screen::move(pos r, pos c) {
 	cursor = row + c;
 	return *this;
 }
-inline char Screen :: get(pos r, pos c) const { //const意为指向的*this是常量
+inline char Screen :: get(pos r, pos c) const { //const脪芒脦陋脰赂脧貌碌脛*this脢脟鲁拢脕驴
 	pos row = r * width;
 	return contents[row + c];
 }
